@@ -1,9 +1,11 @@
-FROM gradle:8.5-jdk17 AS build
+#build con Gradle Wrapper
+FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 COPY . .
-RUN gradle build --no-daemon -x test
+RUN chmod +x ./gradlew
+RUN ./gradlew build --no-daemon -x test
 
-
+#ejecutar la app
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
