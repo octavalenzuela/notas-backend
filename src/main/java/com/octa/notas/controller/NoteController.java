@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController //esta clase maneja requests HTTP y devuelve
 @RequestMapping("/api/notes") //prefijo de todos los endpoints.
-
+@CrossOrigin(origins = "https://ovnotasapp.netlify.app/") // donde corre
 
 public class NoteController {
 
