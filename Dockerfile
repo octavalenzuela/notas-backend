@@ -1,11 +1,11 @@
-#build con Gradle Wrapper
+# Etapa 1: build con Gradle Wrapper
 FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 COPY . .
 RUN chmod +x ./gradlew
 RUN ./gradlew build --no-daemon -x test
 
-#ejecutar la app
+# Etapa 2: ejecutar la app
 FROM eclipse-temurin:17-jdk
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
