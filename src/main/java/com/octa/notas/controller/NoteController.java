@@ -9,7 +9,8 @@ import java.util.List;
 
 @RestController //esta clase maneja requests HTTP y devuelve
 @RequestMapping("/api/notes") //prefijo de todos los endpoints.
-@CrossOrigin(origins = "http://localhost:5173") // o el puerto donde corra react
+@CrossOrigin(origins = "https://melodic-sopapillas-cd4aee.netlify.app") // donde corre
+
 public class NoteController {
 
     private final NoteService noteService;
